@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+
+
+    <Color x:Key="Light-001">#FFFDFDFD</Color>
+    <Color x:Key="Light-002">#FFF7F8F9</Color>
+    <Color x:Key="Light-003">#FFEFF2F6</Color>
+    <Color x:Key="Light-004">#FFE4E7EE</Color>
+    <Color x:Key="Light-005">#FFCED1DA</Color>
+    <Color x:Key="Light-006">#FFB8BDCB</Color>
+
+    <Color x:Key="Blue-002">#FF02B0F1</Color>
+    <Color x:Key="Blue-003">#FF009EF3</Color>
+    <Color x:Key="Blue-004">#FF1697FC</Color>
+
+    <Color x:Key="Green-001">#FFB0CD72</Color>
+    <Color x:Key="Green-002">#FF7BB23D</Color>
+    <Color x:Key="Green-003">#FF39B449</Color>
+    
+    <Color x:Key="Red-001">#FFFF7881</Color>
+    
+    <Color x:Key="Dark-001">#FF7F8FA6</Color>
+    <Color x:Key="Dark-002">#FF70788E</Color>
+    <Color x:Key="Dark-003">#FF4C566E</Color>
+    <Color x:Key="Dark-004">#FF36415F</Color>
+
+    <Color x:Key="Yellow-002">#FFFFC309</Color>
+    <Color x:Key="Purple-001">#FFCBA5BC</Color>
+    <Color x:Key="DarkBlue-001">#FF3B5BA6</Color>
+    <Color x:Key="LightBlue-001">#FFF0FAFD</Color>
+
+</ResourceDictionary>

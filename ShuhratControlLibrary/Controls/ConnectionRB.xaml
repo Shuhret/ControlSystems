@@ -1,0 +1,180 @@
+﻿<RadioButton x:Class="ShuhratControlLibrary.Controls.ConnectionRB"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShuhratControlLibrary.Controls"
+             mc:Ignorable="d" 
+             x:Name="CRB"
+             Height="35"
+             d:DesignHeight="35" d:DesignWidth="500"
+             Style="{DynamicResource ConnectionRadioButtonStyle}" 
+             OverridesDefaultStyle="True" SnapsToDevicePixels="True" Margin="0" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto"
+             >
+
+
+    <RadioButton.Resources>
+        <Style x:Key="VedroButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border x:Name="brdVedro" CornerRadius="1" Opacity="1" Background="Transparent">
+                                <!--<Border.Background>
+                                    <SolidColorBrush Color="{DynamicResource Gray-008}"/>
+                                </Border.Background>-->
+                                <Viewbox Width="15">
+                                    <Canvas Height="50" UseLayoutRounding="False" Width="50">
+                                        <Canvas Height="50" Canvas.Left="3.125" Canvas.Top="0" Width="43.75">
+                                            <Path Data="F1M6.25,43.75C6.25,47.195,9.053,50,12.5,50L37.5,50C40.947,50,43.75,47.195,43.75,43.75L43.75,12.5L6.25,12.5z" Height="37.5" Canvas.Left="3.125" Stretch="Fill" Canvas.Top="12.5" Width="37.5">
+                                                <Path.Fill>
+                                                    <SolidColorBrush Color="#FFFF7881"/>
+                                                </Path.Fill>
+                                            </Path>
+                                            <Path Data="F1M31.25,3.125L31.25,0L18.75,0L18.75,3.125L3.125,3.125L3.125,9.375L46.875,9.375L46.875,3.125z" Height="9.375" Canvas.Left="0" Stretch="Fill" Canvas.Top="0" Width="43.75">
+                                                <Path.Fill>
+                                                    <SolidColorBrush Color="#FFFF7881"/>
+                                                </Path.Fill>
+                                            </Path>
+                                        </Canvas>
+                                    </Canvas>
+                                </Viewbox>
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Visibility="Collapsed"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" TargetName="brdVedro" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="YesNoButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="1" BorderBrush="{TemplateBinding BorderBrush}">
+                                <Border.Background>
+                                    <SolidColorBrush Color="#FFF4F6FA"/>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center" Margin="10,0"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#FFF8F8F8"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontFamily" Value="/ControlSystemsCommerce;component/Resources/Fonts/#Roboto"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush Color="#FFB8BDCB"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ConnectionRadioButtonStyle" TargetType="{x:Type RadioButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Grid>
+                            <Border x:Name="mBorder" Cursor="Hand" Background="White" BorderThickness="0,0,0,1">
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="#FFDEE2E5"/>
+                                </Border.BorderBrush>
+                                <Grid Margin="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="Auto" MinWidth="35"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Width="12" Height="12" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="#FFCED1DA"/>
+                                        </Border.BorderBrush>
+                                        <Rectangle x:Name="rectangle" Margin="1"/>
+                                    </Border>
+                                    <ContentPresenter x:Name="ContentRB" Opacity="1" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="1"/>
+
+                                    <Button x:Name="PART_VedroButton" Content="Button" Grid.Column="2" Margin="0" Style="{DynamicResource VedroButtonStyle}" Opacity="0"/>
+                                    <Grid x:Name="DeleteGrid" Grid.Column="2" Margin="0,0,5,0" Visibility="{Binding DeleteGridVisibility, ElementName=CRB}" d:IsHidden="True">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" MinWidth="35.625"/>
+                                            <ColumnDefinition Width="0.333*"/>
+                                            <ColumnDefinition Width="0.667*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Margin="0,5,2.5,5" BorderThickness="0" CornerRadius="1" Background="{Binding Background, ElementName=mBorder}">
+                                            <TextBlock Text="Удалить подключение?" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0" Foreground="#FFFF7881"/>
+                                        </Border>
+                                        <Button x:Name="PART_YesDeleteButton" Content="Да" Grid.Column="1" Margin="0,6,2.5,6" Style="{DynamicResource YesNoButtonStyle}" Width="60" BorderThickness="0.6" Background="{x:Null}" Foreground="#FF606981" BorderBrush="#FFCED1DA"/>
+                                        <Button x:Name="PART_NoDeleteButton" Content="Нет" Grid.Column="2" Margin="2.5,6,0,6" Style="{DynamicResource YesNoButtonStyle}" Width="60" BorderThickness="0.6" Foreground="#FF606981" BorderBrush="#FFCED1DA"/>
+                                    </Grid>
+                                    <Rectangle x:Name="Greyline" Opacity="0.8" Grid.ColumnSpan="3" Fill="WhiteSmoke" VerticalAlignment="Top" Height="1" Visibility="Hidden"/>
+                                    <Rectangle x:Name="whiteline" Grid.ColumnSpan="3" Fill="White" VerticalAlignment="Bottom" Height="1" Visibility="Hidden"/>
+
+
+                                </Grid>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Opacity" TargetName="ContentRB" Value="1"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="White"/>
+                                <Setter Property="Visibility" TargetName="Greyline" Value="Visible"/>
+                                <Setter Property="Visibility" TargetName="whiteline" Value="Visible"/>
+                                <Setter Property="Fill" TargetName="rectangle">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#FF1697FC"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Background" TargetName="mBorder" >
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#FFFDFDFD"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Foreground">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#FF1697FC"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" TargetName="ContentRB" Value="1"/>
+                                <Setter Property="Opacity" TargetName="PART_VedroButton" Value="1"/>
+                                <Setter Property="Foreground">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#FF1697FC"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontFamily" Value="Roboto"/>
+            <Setter Property="FontSize" Value="13.333"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush Color="#FF606981"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </RadioButton.Resources>
+
+</RadioButton>

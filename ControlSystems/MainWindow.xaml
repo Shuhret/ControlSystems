@@ -1,0 +1,23 @@
+﻿<Window x:Class="ControlSystems.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlSystems"
+        mc:Ignorable="d"
+        x:Name="MW"
+        Style="{DynamicResource VS2012WindowStyle}"
+	    Title="MainWindow"
+	    Width="1200" Height="700"
+        SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen" Focusable="False" MinWidth="1040" MinHeight="600">
+
+
+    <Grid>
+        <Grid x:Name="WorkerGrid">
+            <Grid.Background>
+                <SolidColorBrush Color="{DynamicResource Light-003}"/>
+            </Grid.Background>
+        </Grid>
+        <ContentControl x:Name="LoginCC" Content="{Binding LoginControl, ElementName=MW, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</Window>

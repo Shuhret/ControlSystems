@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="ShuhratControlLibrary.Controls.DopEdinUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShuhratControlLibrary.Controls"
+             mc:Ignorable="d" 
+             x:Name="DE"
+             d:DesignHeight="35" d:DesignWidth="656" Height="35">
+
+    <Border BorderThickness="0,0,0,1" Margin="0">
+        <Border.Background>
+            <SolidColorBrush Color="{DynamicResource Light-001}"/>
+        </Border.Background>
+        <Border.BorderBrush>
+            <SolidColorBrush Color="#FFEAEDF3"/>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="45"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid SnapsToDevicePixels="True" Margin="0">
+                <Viewbox x:Name="Warning" Visibility="{Binding WarningVisibility, ElementName=DE}" Width="18" Height="18" ToolTip="Чтобы создать, нужно указать все данные!">
+                    <Canvas HorizontalAlignment="Left" Height="70" UseLayoutRounding="False" VerticalAlignment="Top" Width="70" Background="White">
+                        <Canvas Height="70" Canvas.Left="0" Canvas.Top="-0.001" Width="70">
+                            <Path Data="M35.0034,45.9365C32.5934,45.9365,30.6334,47.8965,30.6334,50.3095C30.6334,52.7125,32.5934,54.6725,35.0034,54.6725C37.4104,54.6725,39.3704,52.7125,39.3704,50.3095C39.3704,47.8965,37.4104,45.9365,35.0034,45.9365 M35.0034,15.3505C32.4964,15.3505,30.6004,16.6565,30.6004,18.7695L30.6004,38.1535C30.6004,40.2665,32.4964,41.5705,35.0034,41.5705C37.4464,41.5705,39.4064,40.2125,39.4064,38.1535L39.4064,18.7695C39.4064,16.7095,37.4464,15.3505,35.0034,15.3505 M35.0004,63.4365C19.2934,63.4365,6.5634,50.7075,6.5634,34.9995C6.5634,19.2935,19.2934,6.5635,35.0004,6.5635C50.7074,6.5635,63.4364,19.2935,63.4364,34.9995C63.4364,50.7075,50.7074,63.4365,35.0004,63.4365 M35.0004,-0.000500000000002387C15.6704,-0.000500000000002387,0.000399999999999068,15.6695,0.000399999999999068,34.9995C0.000399999999999068,54.3305,15.6704,69.9995,35.0004,69.9995C54.3304,69.9995,70.0004,54.3325,70.0004,34.9995C70.0004,15.6695,54.3304,-0.000500000000002387,35.0004,-0.000500000000002387" Height="70" Canvas.Left="0" Stretch="Fill" Canvas.Top="0" Width="70" Fill="#FFFF626C"/>
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+                <Viewbox x:Name="Ok" Height="25" Visibility="{Binding OkVisibility, ElementName=DE}" ToolTip="Все данные указаны" d:IsHidden="True">
+                    <Canvas HorizontalAlignment="Left" Height="70" UseLayoutRounding="False" VerticalAlignment="Top" Width="70">
+                        <Canvas Height="70" Canvas.Left="0" Canvas.Top="0.001" Width="70">
+                            <Path Data="M55.4199,21.5596C56.7459,22.8896,56.7459,25.0366,55.4199,26.3656L33.3409,48.4406C32.6789,49.1036,31.8109,49.4366,30.9389,49.4366C30.0699,49.4366,29.2019,49.1036,28.5399,48.4406L17.4979,37.4036C16.1729,36.0736,16.1729,33.9266,17.4979,32.6016C18.8269,31.2716,20.9749,31.2716,22.3039,32.6016L30.9389,41.2356L50.6139,21.5596C51.9429,20.2346,54.0909,20.2346,55.4199,21.5596" Height="28.871" Canvas.Left="16.504" Stretch="Fill" Canvas.Top="20.565" Width="39.91" Fill="#FFA3D766"/>
+                        </Canvas>
+                    </Canvas>
+                </Viewbox>
+            </Grid>
+            <Border Margin="0,5" Grid.Column="1" >
+                <Border.Background>
+                    <SolidColorBrush Color="{DynamicResource Light-003}"/>
+                </Border.Background>
+                <ComboBox x:Name="DopEdinComboBox" x:FieldModifier="public" BorderBrush="{x:Null}" BorderThickness="0" FontSize="13" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed" Background="{x:Null}" SelectionChanged="DopEdinComboBox_SelectionChanged">
+                    <ComboBox.Foreground>
+                        <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                    </ComboBox.Foreground>
+                </ComboBox>
+            </Border>
+            <Label Grid.Column="2" Content="=" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed" Margin="0" FontSize="15" VerticalAlignment="Center">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                </Label.Foreground>
+            </Label>
+            <TextBox x:Name="txbxDopEdinKol" Grid.Column="3" Margin="0,5"  BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="13" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed" BorderThickness="0" PreviewTextInput="txbxDopEdinKol_PreviewTextInput" TextChanged="TextBox_TextChanged">
+                <TextBox.Foreground>
+                    <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                </TextBox.Foreground>
+                <TextBox.Background>
+                    <SolidColorBrush Color="{DynamicResource Light-003}"/>
+                </TextBox.Background>
+            </TextBox>
+            <TextBlock Text="{Binding BaseEdin, ElementName=DE, Mode=TwoWay}" Grid.Column="4"  FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <StackPanel Grid.Column="5" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,2,0" VerticalAlignment="Center">
+                <TextBlock Text="Вес 1 " VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+                <TextBlock Text="{Binding SelectedDopEdin, ElementName=DE}" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+                <TextBlock Text=":" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+            </StackPanel>
+            <TextBox x:Name="txbxDopEdinVes" Grid.Column="6" Margin="0,5" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="13" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed" BorderThickness="0" PreviewTextInput="txbxDopEdinKol_PreviewTextInput" TextChanged="TextBox_TextChanged">
+                <TextBox.Foreground>
+                    <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                </TextBox.Foreground>
+                <TextBox.Background>
+                    <SolidColorBrush Color="{DynamicResource Light-003}"/>
+                </TextBox.Background>
+            </TextBox>
+            <Label Grid.Column="7" Content="кг" Margin="0" FontFamily="/ShuhratControlLibrary;component/Fonts/#Roboto Condensed" VerticalAlignment="Center">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource Dark-002}"/>
+                </Label.Foreground>
+            </Label>
+            <Button x:Name="ButtDelete" BorderThickness="1" BorderBrush="Transparent" Background="Transparent"  Grid.Column="9" Style="{DynamicResource ButtonStyle-000}" Click="ClickDopEdinDeleteButton">
+                <Grid>
+                    <Rectangle Width="15" Height="2" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="45"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="{DynamicResource Red-001}"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Width="15" Height="2" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="135"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="{DynamicResource Red-001}"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>
